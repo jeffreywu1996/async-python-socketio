@@ -1,0 +1,9 @@
+{
+  "name": "socket-load-test",
+  "version": "1.0.0",
+  "author": "Jeffrey Wu <jeffreywu1996@gmail.com>",
+  "dependencies": {
+    "artillery": "^2.0.0-27",
+    "artillery-engine-socketio-v3": "^1.1.2"
+  }
+}

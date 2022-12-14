@@ -1,0 +1,32 @@
+config:
+  target: "http://localhost:5000"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+  engines:
+   socketio-v3: {}
+
+scenarios:
+  - name: Simulate 5 users
+    engine: socketio-v3
+    flow:
+      # wait for the WebSocket upgrade (optional)
+      # - think: 1
+
+      # basic emit
+      - emit:
+          channel: "hello"
+          data: "world"
+
+      # emit an object
+      - emit:
+          channel: "hello"
+          data:
+            id: 42
+            status: "in progress"
+            tags:
+              - "tag1"
+              - "tag2"
+
+      # do nothing for 30 seconds then disconnect
+      - think: 30
